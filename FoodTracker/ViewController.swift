@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var mealTextField: UITextField!
     @IBOutlet weak var mealNamesLabel: UILabel!
     @IBOutlet weak var mealImage: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-   
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        mealTextField.text = "Default Text"
-        
     }
 
     //Mark: Textfield Delegate
