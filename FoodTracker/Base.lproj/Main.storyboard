@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,54 +23,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WQF-c4-k7M">
-                                <rect key="frame" x="16" y="28" width="343" height="631"/>
+                                <rect key="frame" x="16" y="40" width="343" height="468"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Names" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THK-Rv-GC2">
-                                        <rect key="frame" x="121.5" y="0.0" width="100" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Names" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THK-Rv-GC2">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="bPc-nx-HXb"/>
-                                            <constraint firstAttribute="height" constant="30" id="ihB-WF-vaH"/>
+                                            <constraint firstAttribute="height" constant="40" id="2aI-oi-wxJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IvO-Zf-lVF">
-                                        <rect key="frame" x="0.0" y="38" width="343" height="40"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IvO-Zf-lVF">
+                                        <rect key="frame" x="0.0" y="48" width="343" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="uML-NP-Tze"/>
+                                            <constraint firstAttribute="height" constant="40" id="GKf-Bw-Oyf"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chicken" translatesAutoresizingMaskIntoConstraints="NO" id="UtS-Zm-1Ay">
-                                        <rect key="frame" x="103" y="86" width="137" height="493"/>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Chicken" translatesAutoresizingMaskIntoConstraints="NO" id="UtS-Zm-1Ay">
+                                        <rect key="frame" x="11.5" y="96" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="UtS-Zm-1Ay" secondAttribute="height" multiplier="1:1" id="U0L-FI-nwA"/>
+                                            <constraint firstAttribute="width" constant="320" id="q3e-zd-1bs"/>
+                                            <constraint firstAttribute="height" constant="320" id="tZv-Pq-9gL"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="c7A-Sh-qca" appends="YES" id="SoE-PH-3W2"/>
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yhs-cd-MrO" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="45.5" y="587" width="252" height="44"/>
+                                        <rect key="frame" x="45.5" y="424" width="252" height="44"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="UtS-Zm-1Ay" firstAttribute="centerX" secondItem="WQF-c4-k7M" secondAttribute="centerX" id="AWw-y9-UIp"/>
-                                    <constraint firstItem="THK-Rv-GC2" firstAttribute="top" secondItem="WQF-c4-k7M" secondAttribute="top" id="HhV-NX-ZVc"/>
-                                    <constraint firstAttribute="trailing" secondItem="IvO-Zf-lVF" secondAttribute="trailing" id="vvQ-PX-phW"/>
+                                    <constraint firstAttribute="trailing" secondItem="THK-Rv-GC2" secondAttribute="trailing" id="BJh-9g-Tdw"/>
+                                    <constraint firstAttribute="trailing" secondItem="IvO-Zf-lVF" secondAttribute="trailing" id="JYw-LA-a01"/>
+                                    <constraint firstItem="THK-Rv-GC2" firstAttribute="leading" secondItem="WQF-c4-k7M" secondAttribute="leading" id="uxh-Z4-eNm"/>
+                                    <constraint firstItem="IvO-Zf-lVF" firstAttribute="leading" secondItem="WQF-c4-k7M" secondAttribute="leading" id="vQJ-U9-wpk"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="WQF-c4-k7M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2a4-U5-MX6"/>
-                            <constraint firstItem="WQF-c4-k7M" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="4rz-M5-JdD"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WQF-c4-k7M" secondAttribute="bottom" constant="8" id="Gej-q2-mCo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WQF-c4-k7M" secondAttribute="trailing" id="WWr-z1-7e9"/>
+                            <constraint firstItem="WQF-c4-k7M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5XA-bz-La9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WQF-c4-k7M" secondAttribute="trailing" id="RpS-cR-eBn"/>
+                            <constraint firstItem="WQF-c4-k7M" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="cPo-X0-EzM"/>
                         </constraints>
                     </view>
                     <connections>
