@@ -8,11 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var mealTextField: UITextField!
+    @IBOutlet weak var mealNamesLabel: UILabel!
+    @IBOutlet weak var mealImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        mealTextField.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +26,46 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+   
+    @IBAction func setDefaultLabelText(_ sender: UIButton) {
+        mealTextField.text = "Default Text"
+        
+    }
 
+    //Mark: Textfield Delegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        mealTextField.resignFirstResponder()
+        return true;
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        mealNamesLabel.text = mealTextField.text
+    }
+    
+    //Mark: Actions
+    
+    @IBAction func selectImage(_ sender: UITapGestureRecognizer) {
+        mealTextField.resignFirstResponder()
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    //Mark: Image Picker Conroller Delegate
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as?
+        UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        mealImage.image = selectedImage
+        dismiss(animated: true, completion: nil)
+    }
 }
 
